@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Forum&display=swap');
+
+        body {
+            font-family: 'Forum', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #BAD8B6;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        header .logo span {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+            color: #005b5b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+            color: #222831;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #005b5b;
+            transform: scale(1.1);
+        }
+
+        .checkout-section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .checkout-header h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #005b5b;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .checkout-form input, .checkout-form textarea {
+            width: 100%;
+            padding: 2px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Forum', sans-serif;
+        }
+
+        .checkout-form label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .qr-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-section img {
+            max-width: 150px;
+        }
+
+        .receipt-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .receipt-section input[type="file"] {
+            padding: 10px;
+        }
+
+        .checkout-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .checkout-actions button {
+            background-color: #00adb5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .checkout-actions button:hover {
+            background-color: #007c7c;
+        }
+
+        .cart-items-list {
+            margin-top: 20px;
+        }
+
+        .cart-items-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-items-list th, .cart-items-list td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-items-list th {
+            background-color: #00adb5;
+            color: white;
+        }
+
+        /* Loading message style */
+        .loading-message {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: #00adb5;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logoOversoul1.png" alt="Logo">
+            <span>OVERSOUL</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="testAss.html">HOME</a></li>
+                <li><a href="aboutsec.html">ABOUT</a></li>
+                <li><a href="shop1.html">SHOP</a></li>
+                <li><a href="cart.html">CART</a></li>
+                <li><a href="checkout.html">CHECKOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="checkout-section">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+
+        <!-- Customer Information Form -->
+        <div class="checkout-form">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <!-- Added Contact Number and Email fields -->
+            <label for="contactnumber">Contact Number:</label>
+            <input type="tel" id="contactnumber" name="contactnumber" pattern="[0-9]{10}" placeholder="Enter your 10-digit phone number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <!-- Cart Items List -->
+        <div class="cart-items-list">
+            <h3>Your Order</h3>
+            <table id="checkout-cart">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic cart items will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- QR Code and Account Information -->
+        <div class="qr-section">
+            <h3>Payment Details</h3>
+            <p>Scan the QR code or use the account number below to make your payment:</p>
+            <img src="qrcode.jpg" alt="QR Code">
+            <p>Account Number: 123-456-7890</p>
+        </div>
+
+        <!-- Receipt Upload Section -->
+        <div class="receipt-section">
+            <label for="receipt">Upload Payment Receipt:</label>
+            <input type="file" id="receipt" accept="image/*" required>
+        </div>
+
+        <!-- Loading Message and Confirm Order Button -->
+        <div class="checkout-actions">
+            <button id="confirm-button" disabled>Confirm Order</button>
+        </div>
+
+        <!-- Loading message -->
+        <div class="loading-message" id="loading-message">
+            Your order is in process, please wait...
+        </div>
+    </section>
+
+    <script>
+        // Retrieve cart data from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCheckoutCart() {
+            const cartItemsContainer = document.getElementById('checkout-cart').getElementsByTagName('tbody')[0];
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+
+                cartItemsContainer.innerHTML += `
+                    <tr>
+                        <td>${item.title}</td>
+                        <td>RM${item.price.toFixed(2)}</td>
+                        <td>${item.size}</td>
+                        <td>${item.color}</td>
+                        <td>${item.quantity}</td>
+                        <td>RM${subtotal.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Enable the "Confirm Order" button only if a receipt has been uploaded
+        document.getElementById('receipt').addEventListener('change', () => {
+            const confirmButton = document.getElementById('confirm-button');
+            if (document.getElementById('receipt').files.length > 0) {
+                confirmButton.disabled = false;
+            } else {
+                confirmButton.disabled = true;
+            }
+        });
+
+        // Handle order confirmation with validation checks
+        document.getElementById('confirm-button').addEventListener('click', () => {
+            const fullname = document.getElementById('fullname').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const contactnumber = document.getElementById('contactnumber').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const receipt = document.getElementById('receipt').files.length;
+
+            let errorMessage = "";
+
+            // Check if all required fields are filled
+            if (!fullname) {
+                errorMessage += "Full Name is required.\n";
+            }
+            if (!address) {
+                errorMessage += "Address is required.\n";
+            }
+            if (!contactnumber) {
+                errorMessage += "Contact Number is required.\n";
+            }
+            if (!email) {
+                errorMessage += "Email is required.\n";
+            }
+            if (receipt === 0) {
+                errorMessage += "Please upload a payment receipt.\n";
+            }
+
+            if (errorMessage) {
+                alert(errorMessage);  // Show alert with missing fields
+            } else {
+                // Show loading message and disable the confirm button
+                document.getElementById('loading-message').style.display = 'block';
+                document.getElementById('confirm-button').disabled = true;
+
+                setTimeout(() => {
+                    alert('Thank you for your order! We will confirm it once we verify the payment.');
+                    // Reset cart after confirmation
+                    localStorage.removeItem('cart');
+                    window.location.href = "thank_you.html";  // Redirect to a Thank You page
+                }, 2000);  // Simulate order processing time (2 seconds)
+            }
+        });
+
+        renderCheckoutCart();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Overview - OVERSOUL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Forum&display=swap');
+        
+        body {
+            font-family: 'Forum', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            background-color: #bad8b6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        header .logo span {
+            font-size: 35px;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+            color: #005b5b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+            color: #222831;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #005b5b;
+            transform: scale(1.1);
+        }
+
+        .about-section {
+            padding: 40px 20px;
+            text-align: center;
+            background: #f9f9f9;
+            animation: fadeIn 1s ease-in-out;
+
+            /* Centering the section */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .about-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #222;
+            opacity: 0;
+            animation: slideUp 1.5s forwards;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 800px;
+            opacity: 0;
+            animation: fadeIn 1s 0.5s forwards;
+        }
+
+        .highlight {
+            color: #00adb5;
+            font-weight: bold;
+        }
+
+        .about-section img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .breezefit {
+            font-size: 24px;
+            color: #00adb5;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeIn 2s 1.5s forwards;
+        }
+
+        .fabric-info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #222;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s 2s forwards;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logoOversoul1.png" alt="Logo">
+        <span>OVERSOUL</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="testAss.html">HOME</a></li>
+            <li><a href="aboutsec.html">ABOUT</a></li>
+            <li><a href="shop1.html">SHOP</a></li>
+            <li><a href="cart.html">CART</a></li>
+            <li><a href="checkout.html">CHECKOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="about-section">
+    <h1>Welcome to OVERSOUL: Where Comfort Meets Luxury</h1>
+    <p>At <span class="highlight">OVERSOUL</span>, we’re redefining the essence of oversized fashion by blending comfort, style, and sustainability. Each piece is a testament to fine craftsmanship, using the highest-quality materials to ensure your style is both effortless and eco-conscious.</p>
+
+    <p>Our shirts feature a unique blend of <span class="highlight">Cotton</span>, <span class="highlight">Cupro</span>, <span class="highlight">Modal</span>, and <span class="highlight">Bamboo</span> fabrics. This carefully curated mix offers ultimate breathability, softness, and a touch of luxury—perfect for those who appreciate the finer things in life.</p>
+
+    <img src="cottonimg.jpg">
+
+    <p>With our exclusive <span class="highlight">Breezefit</span> technology, each shirt is designed to keep you cool and comfortable all day long. Whether you’re lounging or on the move, experience the freedom of fabrics that breathe with you.</p>
+
+    <h class="breezefit">Feel the Breeze. Live in Comfort.</h>
+
+    <div class="fabric-info">
+        <p>The <span class="highlight">Cotton</span> provides a soft, breathable foundation, while <span class="highlight">Cupro</span> adds a silky smooth texture and cool-to-the-touch feel. <span class="highlight">Modal</span> brings extra softness and durability, and <span class="highlight">Bamboo</span> ensures an eco-friendly touch that’s gentle on your skin.</p>
+        <p>Say goodbye to stiff, uncomfortable fabrics. Our shirts offer a relaxed fit that drapes beautifully, so you can look and feel your best without compromise.</p>
+    </div>
+
+<img src="kain.jpg">
+
+</section>
+
+</body>
+</html>

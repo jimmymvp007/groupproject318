@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clothing Shop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Forum&display=swap');
+
+        body {
+            font-family: 'Forum', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #BAD8B6;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        header .logo span {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+            color: #005b5b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Oswald', sans-serif;
+            color: #222831;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #005b5b;
+            transform: scale(1.1);
+        }
+
+        .shop-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .shop-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #005b5b;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .options select, .options input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoOversoul1.png" alt="Logo">
+            <span>OVERSOUL</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="testAss.html">HOME</a></li>
+                <li><a href="aboutsec.html">ABOUT</a></li>
+                <li><a href="shop1.html">SHOP</a></li>
+                <li><a href="cart.html">CART</a></li>
+	        <li><a href="checkout.html">CHECKOUT</a></li>
+	        <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="shop-section">
+        <h1 class="shop-title">OVERSOUL COLLECTION</h1>
+        <div class="products">
+            <!-- Oversized Shirt -->
+            <div class="product-card">
+                <img src="oversizeshirt.jpg" alt="Oversized Shirt" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Oversized Shirt</h2>
+                    <p class="product-price">RM29.00</p>
+                    <div class="options">
+                        <label for="size-shirt">Size:</label>
+                        <select id="size-shirt" name="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+			    <option value="2XL">2XL</option>
+                        </select>
+                        <label for="color-shirt">Color:</label>
+                        <select id="color-shirt" name="color">
+                            <option value="pink">pink</option>
+                            <option value="khaki">khaki</option>
+                            <option value="white">white</option>
+                            <option value="Navy blue">Navy blue</option>
+			    <option value="Black">Black</option>
+			    <option value="Brown">Brown</option>
+                        </select>
+                        <label for="quantity-shirt">Quantity:</label>
+                        <input type="number" id="quantity-shirt" name="quantity" min="1" value="1">
+                    </div>
+                    <a href="#" class="add-to-cart" data-title="Oversized Shirt" data-price="29.00">Add to Cart</a>
+                </div>
+            </div>
+            <!-- Polo Rugby -->
+            <div class="product-card">
+                <img src="polorugby.jpg" alt="Polo Rugby" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Polo Rugby</h2>
+                    <p class="product-price">RM49.00</p>
+                    <div class="options">
+                        <label for="size-rugby">Size:</label>
+                        <select id="size-rugby" name="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+			    <option value="2XL">2XL</option>
+                        </select>
+                        <label for="color-rugby">Color:</label>
+                        <select id="color-rugby" name="color">
+                            <option value="Pink coral">Pink coral</option>
+                            <option value="Navy blue">Navy blue</option>
+                            <option value="Green">Green</option>
+                            <option value="Black">Black</option>
+                        </select>
+                        <label for="quantity-rugby">Quantity:</label>
+                        <input type="number" id="quantity-rugby" name="quantity" min="1" value="1">
+                    </div>
+                    <a href="#" class="add-to-cart" data-title="Polo Rugby" data-price="49.00">Add to Cart</a>
+                </div>
+            </div>
+            <!-- Sweatshirt -->
+            <div class="product-card">
+                <img src="sweatshirt.jpg" alt="Sweatshirt" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Sweatshirt</h2>
+                    <p class="product-price">RM49.00</p>
+                    <div class="options">
+                        <label for="size-sweatshirt">Size:</label>
+                        <select id="size-sweatshirt" name="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+			     <option value="2XL">2XL</option>
+                        </select>
+                        <label for="color-sweatshirt">Color:</label>
+                        <select id="color-sweatshirt" name="color">
+                            <option value="Navy blue">Navy blue</option>
+                            <option value="Cream">Cream</option>
+                            <option value="Grey">Grey</option>
+                          
+                        </select>
+                        <label for="quantity-sweatshirt">Quantity:</label>
+                        <input type="number" id="quantity-sweatshirt" name="quantity" min="1" value="1">
+                    </div>
+                    <a href="#" class="add-to-cart" data-title="Sweatshirt" data-price="49.00">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                const productCard = button.closest('.product-card');
+                const title = button.getAttribute('data-title');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const size = productCard.querySelector('select[name="size"]').value;
+                const color = productCard.querySelector('select[name="color"]').value;
+                const quantity = parseInt(productCard.querySelector('input[name="quantity"]').value, 10);
+
+                const product = { title, price, size, color, quantity };
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${title} has been added to the cart.`);
+            });
+        });
+    </script>
+</body>
+</html>
